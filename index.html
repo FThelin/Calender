@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="todos.css">
-    <link rel="stylesheet" href="calender.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/todos.css">
+    <link rel="stylesheet" href="/styles/calender.css">
     <script src="https://kit.fontawesome.com/8bcd668c2a.js" crossorigin="anonymous"></script>
-    <script src="script.js" defer></script>
+    <script src="scripts/script.js" defer></script>
     <title>Familjekalendern | Kalender för hela familjen</title>
 </head>
 <body>
@@ -19,7 +19,7 @@
     </header>
 
     <!-- Sidebar -->
-    <aside class="column">
+    <aside>
 
         <div class="date center">
             <p class="day">25</p>
@@ -27,28 +27,27 @@
             <p class="year">2019</p>
         </div>
 
-        <div class="todos">
-            <div class="add-delete center">
-                <i class="fas fa-plus"></i>
-                <i class="fas fa-trash-alt"></i>
-            </div>
-            <div class="entries">
-                <div>
-                    <h3>Möte med förskolan</h3>
-                    <p>Tid: <span>18:00 - 20:00</span></p>
-                    <div class="members-assigned">
-                        <div></div>
-                        <div></div>
-                    </div>
-                </div>
+        <div class="todos">            
+            <div class="todo">
+                <h3>Möte med förskolan</h3>
+                <p>Tid: <span>18:00 - 20:00</span></p>
             </div>
         </div>
 
-        <div class="family-members"></div>
+        <div class="add-delete center">
+            <i class="fas fa-plus"></i>
+            <i class="fas fa-trash-alt"></i>
+        </div>
+        
     </aside>
 
     <!-- Calender -->
-    <section class="calender"></section>
+    <section>
+        <div class="select-month center">
+            <p><span><</span> November 2019 <span>></span></November></p>
+        </div>
+        <div class="calender"></div>
+    </section>
     
 
 </body>

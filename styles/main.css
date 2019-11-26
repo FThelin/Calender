@@ -31,13 +31,30 @@ body {
 
 header {
     grid-area: head;
-    background-image: url('./img/header-bg.png');
+    background-image: url('../img/header-bg.png');
     background-size: cover;
     background-repeat: no-repeat;
 }
 
-header h1 {
-    font-family: 'Caveat', cursive;
+header h1 {    
     color: rgb(199, 60, 71);
-    font-size: 7rem;
+    font-size: 6rem;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgb(117, 117, 117);
+    border-radius: 1rem;
+}  
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.349);
+    border-radius: 1rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }

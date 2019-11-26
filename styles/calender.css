@@ -1,0 +1,48 @@
+section {
+    display: grid;
+    grid-template-rows: 5rem auto;
+    grid-template-areas: 
+    "select"
+    "cal";
+}
+
+.select-month {
+    background-color: rgb(228, 228, 228);
+    grid-area: select;
+}
+
+.select-month p {
+    color: rgb(50, 66, 82);
+    font-size: 2rem;
+}
+
+.select-month span {
+    color: rgb(53, 53, 53);
+    font-size: 2rem;
+    background-color: rgba(128, 128, 128, 0.116);
+    padding: 0 0.3rem 0.5rem 0.3rem;
+}
+
+.select-month span:hover {
+    cursor: pointer;
+    background-color: rgba(155, 155, 155, 0.397);
+}
+
+.calender {
+    background-color: rgb(201, 201, 201);
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 1rem;
+    padding: 1rem;
+    grid-area: cal;
+}
+
+.calender div {
+    background-color: rgb(228, 228, 228);
+    color: rgb(87, 87, 87);
+    font-size: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 2px 4px rgb(105, 105, 105);
+}
