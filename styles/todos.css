@@ -47,12 +47,18 @@ aside {
     padding: 0 1rem;
 }
 
-.todos div {
+.todos > div {
     background-color: rgb(50, 66, 82);
     color: rgb(192, 192, 192);
     padding: 0.5rem;
     box-shadow: 8px 8px 16px rgb(31, 31, 31);
     margin-bottom: 1rem;
+    display: grid;
+    grid-template-columns: 90% 10%;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "text icons"
+    "time icons";
 }
 
 .todos div input {
@@ -65,8 +71,8 @@ aside {
 input[type="text"] {
     font-size: 1.2rem;
     width: 100%;
-    max-width:100%;
     word-wrap:break-word;
+    grid-area: text;
 }
 
 .todos div input:nth-child(2) {
@@ -79,16 +85,45 @@ textarea:focus, input:focus {
 
 input[type="time"] {
     border: none;
-    font-size: 1rem;
+    font-size: 1rem;    
+}
+
+.todos #time {
+    grid-area: time;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 60%;
 }
 
 input[type=time]::-webkit-clear-button {
     display: none;
-  }
+}
 
-  input[type=time]::-webkit-inner-spin-button {
+input[type=time]::-webkit-inner-spin-button {
     display: none;
-  }
+}
+
+.todos #icons {
+    grid-area: icons;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.todos #icons i:nth-child(1) {
+    color: rgb(199, 60, 71);
+    font-size: 1.1rem;
+}
+
+.todos #icons i:nth-child(2){
+    color: rgb(37, 202, 139);
+}
+
+.todos #icons i:nth-child(1):hover, .todos #icons i:nth-child(2):hover {
+    cursor: pointer;
+}
 
 .add-delete {
     justify-content: space-around;
