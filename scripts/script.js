@@ -1,10 +1,14 @@
 window.addEventListener('load', init);
 
-const decrement = document.querySelector('.decrement-month');
-
 function init(){    
     generateDays();
     getDate();
+    addEventListeners();
+}
+
+function addEventListeners() {
+    const addTodoButton = document.querySelector('.add');
+    addTodoButton.addEventListener('click', addTodo);
 }
 
 function getDate() {
@@ -52,8 +56,7 @@ function getDate() {
             break;
         default:
             span.innerText = `error`;
-    }
-    
+    }    
 }
 
 function generateDays() {
@@ -66,5 +69,12 @@ function generateDays() {
 
         x.innerHTML += days;
     }
+}
+
+function addTodo() {
+const todos = document.querySelector('.todos');
+const todoContent = document.createElement('div');
+todoContent.innerHTML = `<input type="text" placeholder="Todo..." maxlength="20"><p>Tid: <input type="time"></input> - <input type="time"></input></p>`;
+todos.append(todoContent);
 }
 
