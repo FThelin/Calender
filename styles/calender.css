@@ -3,7 +3,7 @@ section {
     grid-template-rows: 5rem auto;
     grid-template-areas: 
     "select"
-    "cal";
+    "cal"; 
 }
 
 .select-month {
@@ -20,7 +20,7 @@ section {
     color: rgb(53, 53, 53);
     font-size: 2rem;
     background-color: rgba(128, 128, 128, 0.116);
-    padding: 0 0.3rem 0.5rem 0.3rem;
+    padding: 0 0.3rem 0.5rem 0.3rem; 
 }
 
 .select-month span:hover {
@@ -46,3 +46,12 @@ section {
     align-items: center;
     box-shadow: 2px 2px 4px rgb(105, 105, 105);
 }
+
+.calender div:hover {
+    cursor: pointer;
+}
+
+.calender div:active {
+    background: rgb(218, 218, 218);
+}
+

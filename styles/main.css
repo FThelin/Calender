@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Caveat|Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Permanent+Marker&display=swap');
 
 * {
     padding: 0;
@@ -9,8 +10,8 @@
 body {
     height: 100vh;
     display: grid;
-    grid-template-columns: 25% auto;
-    grid-template-rows: 15% auto;
+    grid-template-columns: 20rem auto;
+    grid-template-rows:  14vh auto;
     grid-template-areas: 
     "head head"
     "side cal";    
@@ -39,6 +40,7 @@ header {
 header h1 {    
     color: rgb(199, 60, 71);
     font-size: 6rem;
+    font-family: 'Caveat', cursive;
 }
 
 ::-webkit-scrollbar {
