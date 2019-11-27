@@ -47,13 +47,48 @@ aside {
     padding: 0 1rem;
 }
 
-.todo {
+.todos div {
     background-color: rgb(50, 66, 82);
     color: rgb(192, 192, 192);
     padding: 0.5rem;
     box-shadow: 8px 8px 16px rgb(31, 31, 31);
     margin-bottom: 1rem;
 }
+
+.todos div input {
+    background-color: transparent;
+    border-style: none;
+    color: rgb(192, 192, 192);    
+    font-family: 'Quicksand', sans-serif;    
+}
+
+input[type="text"] {
+    font-size: 1.2rem;
+    width: 100%;
+    max-width:100%;
+    word-wrap:break-word;
+}
+
+.todos div input:nth-child(2) {
+    margin-left: 0.3rem;
+}
+
+textarea:focus, input:focus {
+    outline: none;
+}
+
+input[type="time"] {
+    border: none;
+    font-size: 1rem;
+}
+
+input[type=time]::-webkit-clear-button {
+    display: none;
+  }
+
+  input[type=time]::-webkit-inner-spin-button {
+    display: none;
+  }
 
 .add-delete {
     justify-content: space-around;
