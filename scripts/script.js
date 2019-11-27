@@ -9,14 +9,19 @@ function init(){
 function addEventListeners() {
     const addTodoButton = document.querySelector('.add');
     addTodoButton.addEventListener('click', addTodo);
+    addTodoButton.addEventListener('click', addTodo);        
 }
+
 
 function getDate() {
     const span = document.querySelector('section span');
     const date = new Date();
     const month = date.getMonth();
     const year = date.getFullYear();
+    const day = date.getDay();
     
+    let test = {"month": month, "year": year, "day":day};
+
     switch (month) {
         case 0:
             span.innerText = `Januari ${year}`;
@@ -57,6 +62,8 @@ function getDate() {
         default:
             span.innerText = `error`;
     }    
+
+    return test;
 }
 
 function generateDays() {
@@ -68,13 +75,34 @@ function generateDays() {
         const x = document.querySelector('.calender');
 
         x.innerHTML += days;
+    }    
+}
+let nr = 1;
+
+function addTodo() {
+    nr++;
+    const todos = document.querySelector('.todos');
+    const todoContent = document.createElement('section');
+    todoContent.innerHTML = `<div id="${nr}"><input type="text" placeholder="Todo..." maxlength="20"><p>Tid: <input type="time"></input> - <input type="time"></input></p></div>`;
+    todos.append(todoContent);
+    addTodoEventListeners();
+}
+
+function addTodoEventListeners() {
+    const todo = document.querySelectorAll('.todos div');
+    for(let i = 0; i < todo.length; i++){
+        todo[i].addEventListener('click', removeTodo);
     }
 }
 
-function addTodo() {
-const todos = document.querySelector('.todos');
-const todoContent = document.createElement('div');
-todoContent.innerHTML = `<input type="text" placeholder="Todo..." maxlength="20"><p>Tid: <input type="time"></input> - <input type="time"></input></p>`;
-todos.append(todoContent);
+function removeTodo() {
+    let test = this.id;
+    console.log(test);
+    // console.log(e.target, test);
+    el = document.getElementById(test);
+    el.remove();
+
+    // test2.style.display = 'none';
 }
+
 
