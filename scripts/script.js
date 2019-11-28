@@ -1,4 +1,4 @@
-$(document).ready(() => { 
+$(document).ready(() => {   
     
     /**
      * Add click event to the "add" button.
@@ -6,11 +6,9 @@ $(document).ready(() => {
     const addEventListeners = () => {        
         $('.add').click(addTodo);       
     }
-
     
-    today();
+    today();    
     generateDays(today().month);
-
     addEventListeners(); 
 })
 
