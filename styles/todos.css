@@ -161,7 +161,7 @@ input[type=time]::-webkit-inner-spin-button {
     cursor: pointer;
 }
 
-.done {
+.todos .done {
     background: rgb(125, 214, 155);
     opacity: 0.7; 
 }
