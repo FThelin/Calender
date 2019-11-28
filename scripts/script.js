@@ -1,14 +1,15 @@
-window.addEventListener('load', init);
+$(document).ready(() => { 
+    
+    /**
+     * Add click event to the "add" button.
+     */
+    const addEventListeners = () => {        
+        $('.add').click(addTodo);       
+    }
 
-function init(){    
     generateDays();
     today();
-    addEventListeners();
-}
-
-function addEventListeners() {
-    const addTodoButton = document.querySelector('.add');
-    addTodoButton.addEventListener('click', addTodo);       
-}
+    addEventListeners(); 
+})
 
 

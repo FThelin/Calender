@@ -1,12 +1,5 @@
-function today() {
-    /**
-     * Saving elements in variables
-     */
-    const monthSelector = document.querySelector('section span');
-    const todayWeekDay = document.querySelector('.date .day');
-    const todayDateAndMonth = document.querySelector('.date .date-month');
-    const todayYear = document.querySelector('.date .year');
-    
+const today = () => { 
+
     /**
      * Get todays date
      */
@@ -21,79 +14,79 @@ function today() {
      */
     switch (month) {
         case 0:
-            monthSelector.innerText = `Januari ${year}`;
-            todayDateAndMonth.innerText = `${day} Januari`;
-            todayWeekDay.innerText = nameOfDay(weekday);
-            todayYear.innerText = year;
+            $('section span').text(`Januari ${year}`);
+            $('.date .date-month').text(`${day} Januari`);
+            $('.date .day').text(nameOfDay(weekday));
+            $('.date .year').text(year);
             break;
         case 1:
-            monthSelector.innerText = `Februari ${year}`;
-            todayDateAndMonth.innerText = `${day} Februari`;
-            todayWeekDay.innerText = nameOfDay(weekday);
-            todayYear.innerText = year;
+            $('section span').text(`Februari ${year}`);
+            $('.date .date-month').text(`${day} Februari`);
+            $('.date .day').text(nameOfDay(weekday));
+            $('.date .year').text(year);
             break;
         case 2:
-            monthSelector.innerText = `Mars ${year}`;
-            todayDateAndMonth.innerText = `${day} Mars`;
-            todayWeekDay.innerText = nameOfDay(weekday);
-            todayYear.innerText = year;
+            $('section span').text(`Mars ${year}`);
+            $('.date .date-month').text(`${day} Mars`);
+            $('.date .day').text(nameOfDay(weekday));
+            $('.date .year').text(year);
             break;
         case 3:
-            monthSelector.innerText = `April ${year}`;
-            todayDateAndMonth.innerText = `${day} April`;
-            todayWeekDay.innerText = nameOfDay(weekday);
-            todayYear.innerText = year;
+            $('section span').text(`April ${year}`);
+            $('.date .date-month').text(`${day} April`);
+            $('.date .day').text(nameOfDay(weekday));
+            $('.date .year').text(year);
             break;
         case 4:
-            monthSelector.innerText = `Maj ${year}`;
-            todayDateAndMonth.innerText = `${day} Maj`;
-            todayWeekDay.innerText = nameOfDay(weekday);
-            todayYear.innerText = year;
+            $('section span').text(`Maj ${year}`);
+            $('.date .date-month').text(`${day} Maj`);
+            $('.date .day').text(nameOfDay(weekday));
+            $('.date .year').text(year);
             break;
         case 5:
-            monthSelector.innerText = `Juni ${year}`;
-            todayDateAndMonth.innerText = `${day} Juni`;
-            todayWeekDay.innerText = nameOfDay(weekday);
-            todayYear.innerText = year;
+            $('section span').text(`Juni ${year}`);
+            $('.date .date-month').text(`${day} Juni`);
+            $('.date .day').text(nameOfDay(weekday));
+            $('.date .year').text(year);
             break;
         case 6:
-            monthSelector.innerText = `Juli ${year}`;
-            todayDateAndMonth.innerText = `${day} Juli`;
-            todayWeekDay.innerText = nameOfDay(weekday);
-            todayYear.innerText = year;
+            $('section span').text(`Juli ${year}`);
+            $('.date .date-month').text(`${day} Juli`);
+            $('.date .day').text(nameOfDay(weekday));
+            $('.date .year').text(year);
             break;
         case 7:
-            monthSelector.innerText = `Augusti ${year}`;
-            todayDateAndMonth.innerText = `${day} Augusti`;
-            todayWeekDay.innerText = nameOfDay(weekday);
-            todayYear.innerText = year;
+            $('section span').text(`Augusti ${year}`);
+            $('.date .date-month').text(`${day} Augusti`);
+            $('.date .day').text(nameOfDay(weekday));
+            $('.date .year').text(year);
             break;
         case 8:
-            monthSelector.innerText = `September ${year}`;
-            todayDateAndMonth.innerText = `${day} September`;
-            todayWeekDay.innerText = nameOfDay(weekday);
-            todayYear.innerText = year;
+            $('section span').text(`September ${year}`);
+            $('.date .date-month').text(`${day} September`);
+            $('.date .day').text(nameOfDay(weekday));
+            $('.date .year').text(year);
             break;
         case 9:
-            monthSelector.innerText = `Oktober ${year}`;
-            todayDateAndMonth.innerText = `${day} Oktober`;
-            todayWeekDay.innerText = nameOfDay(weekday);
-            todayYear.innerText = year;
+            $('section span').text(`Oktober ${year}`);
+            $('.date .date-month').text(`${day} Oktober`);
+            $('.date .day').text(nameOfDay(weekday));
+            $('.date .year').text(year);
             break;
         case 10:
-            monthSelector.innerText = `November ${year}`;
-            todayDateAndMonth.innerText = `${day} November`;
-            todayWeekDay.innerText = nameOfDay(weekday);
-            todayYear.innerText = year;
+            $('section span').text(`November ${year}`);
+            $('.date .date-month').text(`${day} November`);
+            $('.date .day').text(nameOfDay(weekday));
+            $('.date .year').text(year);
             break;
         case 11:
-            monthSelector.innerText = `December ${year}`;
-            todayDateAndMonth.innerText = `${day} December`;
-            todayWeekDay.innerText = nameOfDay(weekday);
-            todayYear.innerText = year;            
+            $('section span').text(`December ${year}`);
+            $('.date .date-month').text(`${day} December`);
+            $('.date .day').text(nameOfDay(weekday));
+            $('.date .year').text(year);
             break;
         default:
-            monthSelector.innerText = `error`;
+            $('section span').text('error');
     }   
 }
 
@@ -101,7 +94,7 @@ function today() {
  * Get the correct name of the day
  * @param {Number} weekday returned from date object. Convert to name. 
  */
-function nameOfDay(weekday) {
+const nameOfDay = weekday => {
     switch (weekday) {
         case 0:
             return 'Söndag'
