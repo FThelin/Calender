@@ -162,6 +162,6 @@ input[type=time]::-webkit-inner-spin-button {
 }
 
 .todos .done {
-    background: rgb(125, 214, 155);
+    background: rgb(128, 189, 148);
     opacity: 0.7; 
 }
