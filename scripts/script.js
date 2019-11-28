@@ -7,8 +7,10 @@ $(document).ready(() => {
         $('.add').click(addTodo);       
     }
 
-    generateDays();
+    
     today();
+    generateDays(today().month);
+
     addEventListeners(); 
 })
 

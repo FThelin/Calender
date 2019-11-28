@@ -87,7 +87,9 @@ const today = () => {
             break;
         default:
             $('section span').text('error');
-    }   
+    } 
+    
+    return {year: year, month: month, day: day}
 }
 
 /**
