@@ -1,4 +1,4 @@
-$(document).ready(() => {   
+$(document).ready(() => {
     
     /**
      * Add click event to the "add" button.

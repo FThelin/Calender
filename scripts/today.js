@@ -14,73 +14,85 @@ const today = () => {
      */
     switch (month) {
         case 0:
-            $('section span').text(`Januari ${year}`);
+            $('section .cal-month').text('Januari');
+            $('section .cal-year').text(year);
             $('.date .date-month').text(`${day} Januari`);
             $('.date .day').text(nameOfDay(weekday));
             $('.date .year').text(year);
             break;
         case 1:
-            $('section span').text(`Februari ${year}`);
+            $('section .cal-month').text('Februari');
+            $('section .cal-year').text(year);
             $('.date .date-month').text(`${day} Februari`);
             $('.date .day').text(nameOfDay(weekday));
             $('.date .year').text(year);
             break;
         case 2:
-            $('section span').text(`Mars ${year}`);
+            $('section .cal-month').text('Mars');
+            $('section .cal-year').text(year);
             $('.date .date-month').text(`${day} Mars`);
             $('.date .day').text(nameOfDay(weekday));
             $('.date .year').text(year);
             break;
         case 3:
-            $('section span').text(`April ${year}`);
+            $('section .cal-month').text('April');
+            $('section .cal-year').text(year);
             $('.date .date-month').text(`${day} April`);
             $('.date .day').text(nameOfDay(weekday));
             $('.date .year').text(year);
             break;
         case 4:
-            $('section span').text(`Maj ${year}`);
+            $('section .cal-month').text('Maj');
+            $('section .cal-year').text(year);
             $('.date .date-month').text(`${day} Maj`);
             $('.date .day').text(nameOfDay(weekday));
             $('.date .year').text(year);
             break;
         case 5:
-            $('section span').text(`Juni ${year}`);
+            $('section .cal-month').text('Juni');
+            $('section .cal-year').text(year);
             $('.date .date-month').text(`${day} Juni`);
             $('.date .day').text(nameOfDay(weekday));
             $('.date .year').text(year);
             break;
         case 6:
-            $('section span').text(`Juli ${year}`);
+            $('section .cal-month').text('Juli');
+            $('section .cal-year').text(year);
             $('.date .date-month').text(`${day} Juli`);
             $('.date .day').text(nameOfDay(weekday));
             $('.date .year').text(year);
             break;
         case 7:
-            $('section span').text(`Augusti ${year}`);
+            $('section .cal-month').text('Augusti');
+            $('section .cal-year').text(year);
             $('.date .date-month').text(`${day} Augusti`);
             $('.date .day').text(nameOfDay(weekday));
             $('.date .year').text(year);
             break;
         case 8:
-            $('section span').text(`September ${year}`);
+            $('section .cal-month').text('September');
+            $('section .cal-year').text(year);
             $('.date .date-month').text(`${day} September`);
             $('.date .day').text(nameOfDay(weekday));
             $('.date .year').text(year);
             break;
         case 9:
-            $('section span').text(`Oktober ${year}`);
+            $('section .cal-month').text('Oktober');
+            $('section .cal-year').text(year);
             $('.date .date-month').text(`${day} Oktober`);
             $('.date .day').text(nameOfDay(weekday));
             $('.date .year').text(year);
             break;
         case 10:
-            $('section span').text(`November ${year}`);
+            $('section .cal-month').text('November');
+            $('section .cal-year').text(year);
             $('.date .date-month').text(`${day} November`);
             $('.date .day').text(nameOfDay(weekday));
             $('.date .year').text(year);
             break;
         case 11:
-            $('section span').text(`December ${year}`);
+            $('section .cal-month').text('December');
+            $('section .cal-year').text(year);
             $('.date .date-month').text(`${day} December`);
             $('.date .day').text(nameOfDay(weekday));
             $('.date .year').text(year);
@@ -100,24 +112,17 @@ const nameOfDay = weekday => {
     switch (weekday) {
         case 0:
             return 'Söndag'
-            break;
         case 1:
             return 'Måndag'
-            break;
         case 2:
             return 'Tisdag'
-            break;
         case 3:
             return 'Onsdag'
-            break;
         case 4:
             return 'Torsdag'
-            break;
         case 5:
             return 'Fredag'
-            break;
         case 6:
             return 'Lördag'
-            break;
     }
 }
