@@ -16,8 +16,5 @@ const removeTodo = e => {
 }
 
 const markDone = e => { 
-    $(e.target).parent().parent().css({
-        backgroundColor: 'rgb(50, 186, 96)',
-        opacity: '0.3' 
-    })    
+    $(e.target).parent().parent().addClass("done");
 }
