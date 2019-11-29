@@ -77,15 +77,19 @@ const getMonth = month => {
 $('.calender').on('click', 'div', e => {
     let year = $('.cal-year').text();
     let month = $('.cal-month').text();
-    let day = e.target.getAttribute('id');    
-    $('.date .date-month').text(`${day} ${month}`);    
-    $('.date .year').text(year);
+    let day = e.target.getAttribute('id'); 
+    let date = year + month + day;
     let getWeekday = new Date(year, getMonth(month), day);
     let weekdayNumber = getWeekday.getDay()
-    $('.date .day').text(nameOfDay(weekdayNumber));
+
+    $('.date .day-number').text(day);
+    $('.date .month').text(month);   
+    $('.date .year').text(year);
+    $('.date .day').text(nameOfDay(weekdayNumber));    
+    
+    $('.calender div').css('border', 'none');;
+    $(e.target).css('border', '2px solid rgb(50, 66, 82)');
+
+    //showTodos();
+    
 });
-
-
-
-
-

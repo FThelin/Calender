@@ -32,6 +32,10 @@ aside {
     transform: rotate(-2deg);
 }
 
+.date .day-number {
+    margin-right: 0.5rem;
+}
+
 .date .day {
     font-size: 1.5rem;
 }
