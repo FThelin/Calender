@@ -34,4 +34,24 @@ const markDone = e => {
     $(e.target).parent().parent().addClass("done");
 }
 
+const showTodos = () => {
+
+    $('.todos').html('');
+    let day = $('.date .day-number').text();
+    let month = $('.date .month').text();  
+    let year = $('.date .year').text();
+    let todos = JSON.parse(localStorage.getItem("Todos"));
+    let values;
+    let amountOfTodos = 0;
+    
+    for(let i = 0; i < todos.length; i++){
+        values = Object.values(todos[i]);
+        if (values[0] == year && values[1] == month && values[2] == day) {
+            amountOfTodos++;            
+        }         
+    }
+    $(`#todo${day}`).text(amountOfTodos);
+    
+}
+
 

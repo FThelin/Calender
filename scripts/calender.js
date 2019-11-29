@@ -11,7 +11,7 @@ const generateDays = month => {
     }
 
     for(let i = 1; i < month ; i++){
-        days = `<div id="${i}">${i}</div>`;
+        days = `<div id="${i}">${i}<div id="todo${i}"></div></div>`;
         html += days
         $('.calender').html(html);
     }    
@@ -90,6 +90,6 @@ $('.calender').on('click', 'div', e => {
     $('.calender div').css('border', 'none');;
     $(e.target).css('border', '2px solid rgb(50, 66, 82)');
 
-    //showTodos();
+    showTodos();
     
 });
