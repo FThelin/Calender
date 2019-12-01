@@ -1,5 +1,16 @@
-const todoList = [];
+class Todos {
+    constructor(year, month, day,){
+        this.year = year;
+        this.month = month;
+        this.day = day;
+    }   
 
+    static todoList(todo){
+        let list = []
+        list.push(todo);
+        return list;      
+    }    
+}
 
 const addTodo = () => {    
     const todoContent = document.createElement('div');
@@ -13,11 +24,25 @@ const saveTodo = () => {
     let day = $('.date .day-number').text();
     let month = $('.date .month').text();  
     let year = $('.date .year').text();
-    let date = day + month + year; 
-    let todo = {year: year, month: month, day: day};
+    let date = day + month + year;     
+    let todo = new Todos(year, month, day);
+    let todoList = [];
+    let todoInStorage;
     
-    todoList.push(todo);
-    localStorage.setItem('Todos', JSON.stringify(todoList));
+    if(localStorage.getItem(date)){
+        let storage = JSON.parse(localStorage.getItem(date));
+        for (let i = 0; i < storage.length; i++){
+            todoInStorage = storage[i];
+            todoList.push(todoInStorage);
+            
+        }
+        todoList.push(todo);
+        localStorage.setItem(date, JSON.stringify(todoList)); 
+    } else {
+        localStorage.setItem(date, JSON.stringify(Todos.todoList(todo))); 
+    }    
+    
+    showAmountOfTodos();    
 }
 
 const addTodoEventListeners = () => {    
@@ -34,24 +59,18 @@ const markDone = e => {
     $(e.target).parent().parent().addClass("done");
 }
 
-const showTodos = () => {
+const showAmountOfTodos = () => {
+        let month = $('.cal-month').text();
+        let year = $('.cal-year').text();
 
-    $('.todos').html('');
-    let day = $('.date .day-number').text();
-    let month = $('.date .month').text();  
-    let year = $('.date .year').text();
-    let todos = JSON.parse(localStorage.getItem("Todos"));
-    let values;
-    let amountOfTodos = 0;
-    
-    for(let i = 0; i < todos.length; i++){
-        values = Object.values(todos[i]);
-        if (values[0] == year && values[1] == month && values[2] == day) {
-            amountOfTodos++;            
-        }         
-    }
-    $(`#todo${day}`).text(amountOfTodos);
-    
-}
+        keys = Object.keys(localStorage);        
+        for(let i = 0; i < keys.length; i++) {
+            let getTodos = JSON.parse(localStorage.getItem(keys[i]));
 
-
+            if (getTodos[0].month == month && getTodos[0].year == year) {
+                let amountOfTodos = getTodos.length;
+                $(`#todo${getTodos[0].day}`).text(`(${amountOfTodos})`);
+                $(`#todo${getTodos[0].day}`).addClass('show-todo');
+            }            
+        }  
+} 

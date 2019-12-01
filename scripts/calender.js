@@ -30,6 +30,7 @@ $('.decrement-month').click(() => {
     $('section .cal-month').text(months[currentMonth]);
     $('section .cal-year').text(currentYear);
     generateDays(currentMonth);
+    showAmountOfTodos();
 })
 
 $('.increment-month').click(() => {
@@ -41,6 +42,7 @@ $('.increment-month').click(() => {
     $('section .cal-month').text(months[currentMonth]);
     $('section .cal-year').text(currentYear);
     generateDays(currentMonth);
+    showAmountOfTodos();
 })
 
 const getMonth = month => {
@@ -88,8 +90,5 @@ $('.calender').on('click', 'div', e => {
     $('.date .day').text(nameOfDay(weekdayNumber));    
     
     $('.calender div').css('border', 'none');;
-    $(e.target).css('border', '2px solid rgb(50, 66, 82)');
-
-    showTodos();
-    
+    $(e.target).css('border', '2px solid rgb(50, 66, 82)');    
 });

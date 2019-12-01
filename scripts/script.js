@@ -5,11 +5,12 @@ $(document).ready(() => {
      */
     const addEventListeners = () => {        
         $('.add').click(addTodo);       
-    }
+    }    
     
     today();    
     generateDays(today().month);
-    addEventListeners(); 
+    addEventListeners();
+    showAmountOfTodos();     
 })
 
 
