@@ -76,6 +76,8 @@ const showAmountOfTodos = () => {
 
         if (getTodos[0].month == month && getTodos[0].year == year) {
             let amountOfTodos = getTodos.length;
+            $(`#horn${getTodos[0].day}`).addClass('show-horn');
+
             $(`#todo${getTodos[0].day}`).text(`(${amountOfTodos})`);
             $(`#todo${getTodos[0].day}`).addClass('show-todo');
         }            

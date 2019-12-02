@@ -11,7 +11,7 @@ const generateDays = month => {
     }
 
     for(let i = 1; i < month ; i++){
-        days = `<div id="${i}">${i}<div id="todo${i}"></div></div>`;
+        days = `<div id="${i}">${i}<div id="todo${i}"></div><i id="horn${i}" class="fas fa-bullhorn"></i></div>`;
         html += days
         $('.calender').html(html);
     }    
