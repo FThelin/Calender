@@ -11,15 +11,27 @@ section {
     grid-area: select;
 }
 
-.select-month p {
+.select-month > div {
     color: rgb(50, 66, 82);
     font-size: 2rem;
+    width: 330px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.select-month span {
+.select-month p {
     color: rgb(53, 53, 53);
     font-size: 2rem;
     padding: 0 0.3rem 0.5rem 0.3rem; 
+}
+
+.select-month i:nth-child(1) {
+    justify-content: flex-start;
+}
+
+.select-month i:nth-child(2) {
+    justify-content: flex-end;
 }
 
 .select-month i:hover {

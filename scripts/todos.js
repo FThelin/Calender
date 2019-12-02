@@ -12,10 +12,11 @@ class Todos {
     }    
 }
 
-const addTodo = () => {    
+const addTodo = () => {   
     const todoContent = document.createElement('div');
     todoContent.innerHTML = `<input type="text" placeholder="Todo..." maxlength="18"><div id="time">Tid:<input type="time"></input> - <input type="time"></input></div><div id="icons"><i class="fas fa-times"></i><i class="fas fa-check"></i></div>`;
     $('.todos').append(todoContent);
+    $(todoContent).on('click', markDone); 
     addTodoEventListeners();
     saveTodo();    
 }
@@ -47,7 +48,7 @@ const saveTodo = () => {
 
 const addTodoEventListeners = () => {    
     $('#icons i:nth-child(1)').click(removeTodo);
-    $('#icons i:nth-child(2)').click(markDone);    
+       
 }
 
 const removeTodo = e => {
@@ -55,22 +56,32 @@ const removeTodo = e => {
     todo.remove();
 }
 
-const markDone = e => { 
-    $(e.target).parent().parent().addClass("done");
+const markDone = e => {
+    const todo = $(e.target).parent().parent();
+    if (todo.hasClass('done')) {
+        todo.removeClass('done');
+    } else {
+        todo.addClass('done');
+    }
+    
 }
 
 const showAmountOfTodos = () => {
-        let month = $('.cal-month').text();
-        let year = $('.cal-year').text();
+    let month = $('.cal-month').text();
+    let year = $('.cal-year').text();
 
-        keys = Object.keys(localStorage);        
-        for(let i = 0; i < keys.length; i++) {
-            let getTodos = JSON.parse(localStorage.getItem(keys[i]));
+    keys = Object.keys(localStorage);        
+    for(let i = 0; i < keys.length; i++) {
+        let getTodos = JSON.parse(localStorage.getItem(keys[i]));
 
-            if (getTodos[0].month == month && getTodos[0].year == year) {
-                let amountOfTodos = getTodos.length;
-                $(`#todo${getTodos[0].day}`).text(`(${amountOfTodos})`);
-                $(`#todo${getTodos[0].day}`).addClass('show-todo');
-            }            
-        }  
-} 
+        if (getTodos[0].month == month && getTodos[0].year == year) {
+            let amountOfTodos = getTodos.length;
+            $(`#todo${getTodos[0].day}`).text(`(${amountOfTodos})`);
+            $(`#todo${getTodos[0].day}`).addClass('show-todo');
+        }            
+    }  
+}
+
+const showTodos = () => {
+    console.log('hej');
+}

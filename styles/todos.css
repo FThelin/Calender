@@ -45,7 +45,6 @@ aside {
 }
 
 .todos {
-    width: 100%;
     grid-area: todos;
     overflow-y: auto;
     padding: 0 1rem;
