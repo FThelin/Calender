@@ -26,9 +26,12 @@
     <aside>      
 
         <div class="date column">
-            <p class="day">Måndag</p>             
-            <p class="date-month">25 November</p>   
-            <p class="year">2019</p>                             
+            <p class="day"></p>             
+            <div class="date-month center">
+                <p class="day-number"></p>
+                <p class="month"></p>
+            </div>   
+            <p class="year"></p>                             
         </div>
 
         <div class="todos"></div>
@@ -43,7 +46,12 @@
     <!-- Calender -->
     <section>
         <div class="select-month center">
-            <p><i class="fas fa-angle-left decrement-month"></i><span>Juni 2018</span><i class="fas fa-angle-right increment-month"></i></p>
+            <p>
+                <i class="fas fa-angle-left decrement-month"></i>
+                <span class="cal-month">Juni</span>
+                <span class="cal-year">2018</span>
+                <i class="fas fa-angle-right increment-month"></i>
+            </p>
         </div>
         <div class="calender"></div>
     </section>    
