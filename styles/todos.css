@@ -10,6 +10,52 @@ aside {
     "addel";
 }
 
+.new-todo {
+    position: absolute;
+    z-index: 1;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.801);
+    display: none;   
+}
+
+.new-todo .set-todo {
+    background-color: #E7E7E7;
+    width: 30%;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgb(48, 48, 48);  
+}
+
+.new-todo form {
+    height: 10rem;
+}
+
+.new-todo form input[type=time]{
+    height: 2rem;
+    margin-top: 1rem;
+}
+
+.new-todo form button{
+    margin-top: 1rem;
+    width: 4rem;
+    height: 2.5rem;
+    background-color: rgb(63, 194, 139);
+    border: 1px solid rgb(63, 194, 139);
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-right: 1rem;
+}
+
+.new-todo form button:nth-child(2){
+    background-color: rgb(199, 60, 71);
+    border: 1px solid rgb(199, 60, 71);
+}
+
+.new-todo label {
+    font-weight: bold;
+}
+
 .date {
     width: 92%;
     margin: 0 auto;
@@ -58,54 +104,11 @@ aside {
     margin-bottom: 1rem;
     display: grid;
     grid-template-columns: 90% 10%;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 40%;
     grid-template-areas: 
     "text icons"
-    "time icons";
-}
-
-.todos div input {
-    background-color: transparent;
-    border-style: none;
-    color: rgb(192, 192, 192);    
-    font-family: 'Quicksand', sans-serif;    
-}
-
-input[type="text"] {
-    font-size: 1.2rem;
-    width: 100%;
-    word-wrap:break-word;
-    grid-area: text;
-}
-
-.todos div input:nth-child(2) {
-    margin-left: 0.3rem;
-}
-
-textarea:focus, input:focus {
-    outline: none;
-}
-
-input[type="time"] {
-    border: none;
-    font-size: 1rem;    
-}
-
-.todos #time {
-    grid-area: time;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    width: 60%;
-}
-
-input[type=time]::-webkit-clear-button {
-    display: none;
-}
-
-input[type=time]::-webkit-inner-spin-button {
-    display: none;
+    "time icons"
+    "btn btn";
 }
 
 .todos #icons {
@@ -140,27 +143,13 @@ input[type=time]::-webkit-inner-spin-button {
     padding: 1rem;
     border-radius: 50%;
     color: rgb(165, 164, 164);
-}
-
-.add-delete i:nth-child(1) {
     background-color: rgb(199, 60, 71);
-    font-size: 2.5rem;
-}
-
-.add-delete i:nth-child(2) {
-    background-color: rgb(100, 100, 100);
-    font-size: 2.5rem;
+    font-size: 1.8rem;
 }
 
 .add-delete i:nth-child(1):hover {
     background-color: rgb(192, 74, 86);
     color: gray;
-    cursor: pointer;
-}
-
-.add-delete i:nth-child(2):hover {
-    background-color: rgb(124, 124, 124);
-    color: rgb(49, 49, 49);
     cursor: pointer;
 }
 

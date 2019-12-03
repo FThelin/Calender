@@ -90,5 +90,8 @@ $('.calender').on('click', 'div', e => {
     $('.date .day').text(nameOfDay(weekdayNumber));    
     
     $('.calender div').css('border', 'none');;
-    $(e.target).css('border', '2px solid rgb(50, 66, 82)');    
+    $(e.target).css('border', '2px solid rgb(50, 66, 82)');
+    
+    $('.todos').html('');
+    showTodos();
 });
