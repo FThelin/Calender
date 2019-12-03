@@ -3,7 +3,7 @@ aside {
     grid-area: side;
     background-color: rgb(97, 113, 128);
     display: grid;
-    grid-template-rows: 8rem auto 6rem;
+    grid-template-rows: 8rem auto 2rem;
     grid-template-areas: 
     "date"
     "todos"
@@ -139,11 +139,12 @@ aside {
     border-top: 1px solid black;
 }
 
-.add-delete i {
+.date i {
+    margin-left: 60%;
     padding: 1rem;
     border-radius: 50%;
-    color: rgb(165, 164, 164);
-    background-color: rgb(199, 60, 71);
+    color: rgb(62, 170, 58);
+    background-color: rgb(112, 228, 189);
     font-size: 1.8rem;
 }
 
