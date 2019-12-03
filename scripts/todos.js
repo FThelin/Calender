@@ -36,9 +36,29 @@ const showTodos = () => {
                 const todoContent = document.createElement('div');
                 todoContent.innerHTML = `<p>${getTodos[j].text}</p><p>Tid: ${getTodos[j].timeFrom} - ${getTodos[j].timeTo}</p><div id="icons"><i class="fas fa-times"></i><i class="fas fa-check"></i></div>`;
                 $('.todos').append(todoContent);
+                addMarkDoneEventListener();
+                removeTodoEventListener();
             } 
         }
     }
+}
+
+const addMarkDoneEventListener = () => {
+    $("#icons .fa-check").unbind('click');
+    $("#icons .fa-check").click( e => {
+        if ($(e.target).parent().parent().hasClass('done')) {
+            $(e.target).parent().parent().removeClass('done');
+        } else {
+            $(e.target).parent().parent().addClass('done');
+        }        
+    })
+}
+
+const removeTodoEventListener = () => {
+    $("#icons .fa-check").unbind('click');
+    $("#icons .fa-times").click( e => {
+        $(e.target).parent().parent().remove();
+    })
 }
 
 const showAmountOfTodos = () => {
