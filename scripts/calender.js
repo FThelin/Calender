@@ -11,7 +11,7 @@ const generateDays = month => {
     }
 
     for(let i = 1; i < month ; i++){
-        days = `<div id="${i}">${i}<div id="holiday${i}"></div><div id="todo${i}"></div><i id="horn${i}" class="fas fa-bullhorn"></i></div>`;
+        days = `<div id="${i}">${i}<div  id="holiday${i}"></div><div id="todo${i}"></div><i id="horn${i}" class="fas fa-bullhorn"></i></div>`;
         html += days
         $('.calender').html(html);
     }    
@@ -91,9 +91,11 @@ $('.calender').on('click', 'div', e => {
     $('.date .year').text(year);
     $('.date .day').text(nameOfDay(weekdayNumber));    
     
-    $('.calender div').css('border', 'none');;
-    $(e.target).css('border', '2px solid rgb(50, 66, 82)');
-    
+    $('.calender div').css('background-color', 'rgb(228, 228, 228)');
+    $('.calender div').css('background-image', 'none');
+    $(e.target).css('background-image', 'url("https://i.imgur.com/EhHzK6J.png")');
+    $(e.target).css('background-color', 'rgba(228, 218, 258, 1)');
+
     $('.todos').html('');
     showTodos();
 });

@@ -56,7 +56,22 @@ section {
     justify-content: center;
     align-items: center;
     box-shadow: 2px 2px 4px rgb(105, 105, 105);  
-    position: relative;       
+    position: relative;     
+}
+
+.calender > div i {
+    border: none;
+    pointer-events: none;    
+}
+
+.calender > div .show-todo {
+    border: none;
+    pointer-events: none;
+}
+
+.calender > div .holiday {
+    border: none;
+    pointer-events: none;
 }
 
 .show-todo {    
@@ -78,7 +93,9 @@ section {
 }
 
 .calender > div .show-horn {    
-    color: #C73C47;
+    color: rgb(216, 83, 94);
+    pointer-events: none;
+    display: flex;
 }
 
 .calender > div i {
@@ -88,7 +105,7 @@ section {
     font-size: 16px;
     color: rgb(50, 66, 82);
     font-weight: bold;
-    color: rgb(228, 228, 228);
+    display: none;
 }
 
 .calender div:hover {
@@ -98,4 +115,3 @@ section {
 .calender div:active {
     background: rgb(218, 218, 218);
 }
-
