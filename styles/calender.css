@@ -68,6 +68,15 @@ section {
     font-weight: bold;
 }
 
+.holiday {
+    position: absolute;
+    left: 0.3rem;
+    bottom: 0.3rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: rgb(199, 60, 71);
+}
+
 .calender > div .show-horn {    
     color: #C73C47;
 }

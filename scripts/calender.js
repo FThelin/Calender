@@ -11,7 +11,7 @@ const generateDays = month => {
     }
 
     for(let i = 1; i < month ; i++){
-        days = `<div id="${i}">${i}<div id="todo${i}"></div><i id="horn${i}" class="fas fa-bullhorn"></i></div>`;
+        days = `<div id="${i}">${i}<div id="holiday${i}"></div><div id="todo${i}"></div><i id="horn${i}" class="fas fa-bullhorn"></i></div>`;
         html += days
         $('.calender').html(html);
     }    
@@ -31,6 +31,7 @@ $('.decrement-month').click(() => {
     $('section .cal-year').text(currentYear);
     generateDays(currentMonth);
     showAmountOfTodos();
+    holidayAsyncAwait(currentYear);
 })
 
 $('.increment-month').click(() => {
@@ -43,6 +44,7 @@ $('.increment-month').click(() => {
     $('section .cal-year').text(currentYear);
     generateDays(currentMonth);
     showAmountOfTodos();
+    holidayAsyncAwait(currentYear);
 })
 
 const getMonth = month => {
