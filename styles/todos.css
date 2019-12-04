@@ -1,12 +1,11 @@
 aside {
-    height: 86vh;
+    height: auto;
     grid-area: side;
     background-color: rgb(97, 113, 128);
     display: grid;
-    grid-template-rows: 8rem auto 2rem;
+    grid-template-rows: 8rem auto;
     grid-template-areas: 
     "date"
-    "todos"
     "todos";
 }
 
@@ -132,7 +131,7 @@ aside {
     color: rgb(37, 202, 139);
 }
 
-.todos #icons i:nth-child(1):hover, .todos #icons i:nth-child(2):hover {
+.todos #icons i:nth-child(1):hover, .todos #icons i:nth-child(2):hover, .todos #icons i:nth-child(3):hover {
     cursor: pointer;
 }
 

@@ -1,0 +1,133 @@
+@media screen and (max-width: 68.75rem) {
+
+    .newTodoButton span {
+        display: none;
+    }
+
+    body {
+    grid-template-rows: 4rem auto;
+    }
+
+    header h1 {
+        font-size: 3rem;
+    }
+    
+}
+
+@media screen and (max-width: 56.25rem) {
+
+    header {
+        justify-content: flex-end;
+        padding-right: 5rem;
+    }
+
+}
+
+@media screen and (max-width: 52.5rem) {
+    
+    body {
+    width: auto;
+    height: auto;
+    grid-template-columns: auto;
+    grid-template-rows: 10% 80% 10% ;
+    grid-template-areas: 
+    "head"
+    "side"
+    "cal";    
+    }
+
+    .todos > div {
+        
+    }
+    
+    .select-month .newTodoButton {
+        position: absolute;
+        left: 5rem;
+        font-size: 1.4rem;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+    }
+
+    .date {
+        width: 92%;
+        height:8rem;
+        justify-content: center;
+        position: relative;
+        top: 0rem;
+    }
+    
+    header {
+        justify-content: center;
+        padding-right: 0rem;
+    }
+}
+
+@media screen and (max-width: 37.5rem) {
+    
+    body {
+        background-color: rgb(97, 113, 128);
+        width: auto;
+        height: 40rem;
+        grid-template-columns: auto;
+        grid-template-rows: 10% 90%;
+        grid-template-areas: 
+        "head"
+        "side";
+    }
+    section {
+        display: none;
+    }
+
+    html {
+        color: rgb(97, 113, 128);
+    }
+
+}
+
+/*
+
+body {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 20rem auto;
+    grid-template-rows:  14vh auto;
+    grid-template-areas: 
+    "head head"
+    "side cal";    
+    font-family: 'Quicksand', sans-serif;
+}
+
+aside {
+    height: auto;
+    grid-area: side;
+    background-color: rgb(97, 113, 128);
+    display: grid;
+    grid-template-rows: 8rem auto;
+    grid-template-areas: 
+    "date"
+    "todos";
+}
+
+.todos > div {
+    background-color: rgb(50, 66, 82);
+    color: rgb(192, 192, 192);
+    padding: 0.5rem;
+    box-shadow: 8px 8px 16px rgb(31, 31, 31);
+    margin-bottom: 1rem;
+    display: grid;
+    grid-template-columns: 90% 10%;
+    grid-template-rows: 1fr 1fr 40%;
+    grid-template-areas: 
+    "text icons"
+    "time icons"
+    "btn btn";
+}
+
+section {
+    display: grid;
+    grid-template-rows: 5rem auto;
+    grid-template-areas: 
+    "select"
+    "cal"; 
+}

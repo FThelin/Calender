@@ -92,8 +92,7 @@ $('.calender').on('click', 'div', e => {
     $('.date .day').text(nameOfDay(weekdayNumber));    
     
     $('.calender > div').css('background-color', 'rgb(228, 228, 228)');
-    $('.calender > div').css('background-image', 'none');
-    $(e.target).css('background-color', 'rgba(228, 218, 258, 1)');
+    $(e.target).css('background-color', 'rgba(0, 105, 100, 0.1)');
 
     $('.todos').html('');
     showTodos();

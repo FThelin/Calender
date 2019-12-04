@@ -26,24 +26,26 @@ section {
 .select-month .newTodoButton {
     position: absolute;
     left: 22rem;
-    font-size: 1.5rem;
-    font-weight: 600;
+    font-size: 1.4rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
 }
 
 .newTodoButton .fa-plus {
     color: rgb(0, 131, 33);
     background-color: rgb(255, 255, 255);
     padding: 0.4rem;
-    border-radius: 3rem;
+    border-radius: 50%;
     box-shadow: 0rem 0rem 0.2rem black;
     margin-right: 0.3rem;
+    font-size: 2.2rem;
 }
 
 .newTodoButton .fa-plus:hover {
     cursor: pointer;
     background-color: white;
     box-shadow: 0rem 0rem 0.2rem green;
-    font-size; 2
 }
 
 .select-month p {
