@@ -7,7 +7,7 @@ aside {
     grid-template-areas: 
     "date"
     "todos"
-    "addel";
+    "todos";
 }
 
 .new-todo {
@@ -131,14 +131,6 @@ aside {
     cursor: pointer;
 }
 
-.add-delete {
-    justify-content: space-around;
-    align-items: center;
-    grid-area: addel;
-    background-color: rgb(114, 114, 114);
-    border-top: 1px solid black;
-}
-
 .date i {
     margin-left: 60%;
     padding: 1rem;
@@ -155,6 +147,5 @@ aside {
 }
 
 .todos .done {
-    background: rgb(128, 189, 148);
-    opacity: 0.7; 
+    background: rgb(0, 75, 29);
 }

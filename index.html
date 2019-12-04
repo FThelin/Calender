@@ -7,13 +7,15 @@
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/todos.css">
     <link rel="stylesheet" href="styles/calender.css">
+    <link rel="stylesheet" href="styles/mediaqueries.css">
+    <link rel="shortcut icon" href="https://i.imgur.com/EhHzK6J.png" type="image/x-icon">
     <script src="https://kit.fontawesome.com/8bcd668c2a.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>    
     <script src="scripts/script.js"></script>
     <script src="scripts/today.js"></script>    
     <script src="scripts/calender.js" defer></script>
     <script src="scripts/todos.js"></script>
-    <title>Familjekalendern | Kalender för hela familjen</title>
+    <title>Todo Kalender</title>
 </head>
 <body>
 
@@ -42,7 +44,7 @@
 
     <!-- Header -->
     <header class="center">
-        <h1>Familjen <span>Thelin</span></h1>
+        <h1>Todo Kalender</h1>
     </header>
 
     <!-- Sidebar -->
@@ -55,20 +57,20 @@
                 <p class="month"></p>
             </div>   
             <p class="year"></p>
-            <i class="fas fa-plus add"></i>                          
+            <!-- <i class="fas fa-plus add"></i> -->
         </div>
 
         <div class="todos"></div>
-
-        <div class="add-delete center">
-        </div>
         
     </aside>
 
     <!-- Calender -->
     <section>
         <div class="select-month center">
-            <div>
+            <div class="newTodoButton">
+                <i class="fas fa-plus add"></i><span>Skapa todo</span>
+            </div>
+            <div class="chooseMonth">
                 <i class="fas fa-angle-left decrement-month"></i>
                 <div class="center">
                     <p class="cal-month">Juni</p>
@@ -79,6 +81,5 @@
         </div>
         <div class="calender"></div>
     </section>    
-
 </body>
 </html>

@@ -37,7 +37,7 @@ const showTodos = () => {
                 todoContent.innerHTML = `<p>${getTodos[j].text}</p><p>Tid: ${getTodos[j].timeFrom} - ${getTodos[j].timeTo}</p><div id="icons"><i class="fas fa-times"></i><i class="fas fa-check"></i></div>`;
                 $('.todos').append(todoContent);
                 addMarkDoneEventListener();
-                //removeTodoEventListener();
+                removeTodoEventListener();
             } 
         }
     }
@@ -55,9 +55,26 @@ const addMarkDoneEventListener = () => {
 }
 
 const removeTodoEventListener = () => {
-    $("#icons .fa-check").unbind('click');
+    $("#icons .fa-times").unbind('click');
     $("#icons .fa-times").click( e => {
-        $(e.target).parent().parent().remove();
+        let getTodoDiv = e.target.parentElement.parentElement;
+        let getTextElement = getTodoDiv.firstChild;
+        let text = $(getTextElement).text();
+        
+        let day = $('.date .day-number').text();
+        let month = $('.date .month').text();  
+        let year = $('.date .year').text();
+
+        let getTodos = JSON.parse(localStorage.getItem(`${day}${month}${year}`)); 
+        for (let i = 0; i < getTodos.length; i++){            
+            if(getTodos[i].text === text){
+                $(e.target).parent().parent().remove();
+                getTodos.splice(i, 1);
+                localStorage.setItem(`${day}${month}${year}`, JSON.stringify(getTodos));                
+            }
+        }
+
+        showAmountOfTodos();
     })
 }
 

@@ -9,15 +9,41 @@ section {
 .select-month {
     background-color: rgb(228, 228, 228);
     grid-area: select;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.select-month > div {
+.select-month .chooseMonth {
     color: rgb(50, 66, 82);
     font-size: 2rem;
     width: 330px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.select-month .newTodoButton {
+    position: absolute;
+    left: 22rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.newTodoButton .fa-plus {
+    color: rgb(0, 131, 33);
+    background-color: rgb(255, 255, 255);
+    padding: 0.4rem;
+    border-radius: 3rem;
+    box-shadow: 0rem 0rem 0.2rem black;
+    margin-right: 0.3rem;
+}
+
+.newTodoButton .fa-plus:hover {
+    cursor: pointer;
+    background-color: white;
+    box-shadow: 0rem 0rem 0.2rem green;
+    font-size; 2
 }
 
 .select-month p {

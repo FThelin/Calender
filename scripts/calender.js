@@ -91,9 +91,8 @@ $('.calender').on('click', 'div', e => {
     $('.date .year').text(year);
     $('.date .day').text(nameOfDay(weekdayNumber));    
     
-    $('.calender div').css('background-color', 'rgb(228, 228, 228)');
-    $('.calender div').css('background-image', 'none');
-    $(e.target).css('background-image', 'url("https://i.imgur.com/EhHzK6J.png")');
+    $('.calender > div').css('background-color', 'rgb(228, 228, 228)');
+    $('.calender > div').css('background-image', 'none');
     $(e.target).css('background-color', 'rgba(228, 218, 258, 1)');
 
     $('.todos').html('');
