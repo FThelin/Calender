@@ -34,10 +34,11 @@ const showTodos = () => {
         for(let j = 0; j < getTodos.length; j++){
             if (getTodos[j].day == day && getTodos[j].month == month && getTodos[j].year == year) {
                 const todoContent = document.createElement('div');
-                todoContent.innerHTML = `<p>${getTodos[j].text}</p><p>Tid: ${getTodos[j].timeFrom} - ${getTodos[j].timeTo}</p><div id="icons"><i class="fas fa-times"></i><i class="fas fa-check"></i></div>`;
+                todoContent.innerHTML = `<p>${getTodos[j].text}</p><p>Tid: ${getTodos[j].timeFrom} - ${getTodos[j].timeTo}</p><div id="icons"><i class="fas fa-times"></i><i class="fas fa-pen"></i></i><i class="fas fa-check"></div>`;
                 $('.todos').append(todoContent);
                 addMarkDoneEventListener();
                 removeTodoEventListener();
+                editTodoEventListener();
             } 
         }
     }
@@ -53,6 +54,65 @@ const addMarkDoneEventListener = () => {
         }        
     })
 }
+
+const editTodoEventListener = () => {
+    $("#icons .fa-pen").unbind('click');
+    $("#icons .fa-pen").click( e => {
+        
+        let getTodoDiv = e.target.parentElement.parentElement;
+        let getTextElement = getTodoDiv.firstChild;
+        let text = $(getTextElement).text();
+        console.log(text);
+        
+        
+        let day = $('.date .day-number').text();
+        let month = $('.date .month').text();  
+        let year = $('.date .year').text();
+        
+        $('.new-todo').css('display', 'flex');
+        $('.new-todo p').text(`${day} ${month} ${year}`);
+        $('.new-todo #text').val(text);
+    })
+    $(".new-todo button:nth-child(1)").unbind('click');
+    $(".new-todo button:nth-child(1)").click( e => {
+        e.preventDefault();
+        editLocalstorage(e);
+    })
+}
+
+
+const editLocalstorage = e => {
+    console.log(e);
+    
+    let text = $(getTextElement).text();
+    console.log('editLocalStorage');
+    // console.log(text);
+    
+    
+    let newText = $('#text').val();
+    // console.log(newText);
+    
+
+    let day = $('.date .day-number').text();
+    let month = $('.date .month').text();  
+    let year = $('.date .year').text();
+
+
+    let getTodos = JSON.parse(localStorage.getItem(`${day}${month}${year}`)); 
+    for (let i = 0; i < getTodos.length; i++){            
+        if(getTodos[i].text === text){
+            getTodos[i].text = newText;
+            console.log('getTodos:', getTodos)
+            localStorage.setItem(`${day}${month}${year}`, JSON.stringify(getTodos));                
+        }
+    }
+    $('.new-todo').css('display', 'none');
+    showAmountOfTodos();
+    $('.todos').html('');
+    showTodos(); 
+    clearForm();
+}
+
 
 const removeTodoEventListener = () => {
     $("#icons .fa-times").unbind('click');
@@ -130,7 +190,7 @@ const saveTodos = (e) => {
         todoList.push(todo);
         localStorage.setItem(date, JSON.stringify(todoList)); 
     } else {
-        localStorage.setItem(date, JSON.stringify(Todos.todoList(todo))); 
+        localStorage.setItem(date, JSON.stringify(Todos.todoList(todo)));
     }
     
     clearForm();
