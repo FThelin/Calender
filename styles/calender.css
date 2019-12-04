@@ -1,8 +1,9 @@
 section {
     display: grid;
-    grid-template-rows: 5rem auto;
+    grid-template-rows: 5rem 3rem auto;
     grid-template-areas: 
     "select"
+    "days"
     "cal"; 
 }
 
@@ -71,9 +72,21 @@ section {
     background-color: rgb(201, 201, 201);
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    grid-gap: 1rem;
-    padding: 1rem;
     grid-area: cal;    
+}
+
+.days {
+    grid-area: days;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.days div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    font-size: 1.2rem;
 }
 
 .calender > div {
@@ -83,7 +96,7 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 2px 2px 4px rgb(105, 105, 105);  
+    box-shadow: 1px 1px 4px rgb(0, 0, 0);  
     position: relative;     
 }
 

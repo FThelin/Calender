@@ -1,25 +1,61 @@
-const generateDays = month => {    
-
-    let html = "";
-
-    if (month == 3 || month == 5 || month == 8 || month == 10) {
-        month = 31;
-    } else if (month == 0 || month == 2 || month == 4 || month == 6 || month == 7 || month == 9 || month == 11) {
-        month = 32;
-    } else {
-        month = 29;
-    }
-
-    for(let i = 1; i < month ; i++){
-        days = `<div id="${i}">${i}<div  id="holiday${i}"></div><div id="todo${i}"></div><i id="horn${i}" class="fas fa-bullhorn"></i></div>`;
-        html += days
-        $('.calender').html(html);
-    }    
-}
-
+let selectedYear;
+let selectedMonth;
+let selectedDay;
 let currentMonth = today().month;
 let currentYear = today().year;
 const months = ['Januari', 'Februari', 'Mars', 'April', 'Maj', 'Juni', 'Juli', 'Augusti', 'September', 'Oktober', 'November', 'December'];
+
+const generateDays = currentMonth => {
+    let html = "";
+    let date = 1;
+    let day;
+    currentYear = $('section .cal-year').text();
+    const firstDay = new Date(currentYear, currentMonth, 1);
+    const lastDay = new Date(currentYear, currentMonth + 1, 0); 
+
+    switch (firstDay.getDay()){
+        case 0:
+            day = 6;
+            break;
+        case 1:
+            day = 0;
+            break;
+        case 2:
+            day = 1;
+            break;
+        case 3:
+            day = 2;
+            break;
+        case 4:
+            day = 3;
+            break;
+        case 5:
+            day = 4;
+            break;
+        case 6:
+            day = 5;
+            break;
+    }
+
+    for (let i = 0; i < 42; i++){
+        days = `<div id="${i}"></div>`;
+        html += days
+        $('.calender').html(html);
+    }
+    let divs = $('.calender div');
+    for (let i = 0; i < divs.length; i++){
+        if (day == divs[i].getAttribute('id')){
+            for(let j = day; j < lastDay.getDate() + day; j++){    
+                $(`#${j}`).html(`${date}<div  id="holiday${date}"></div><div id="todo${date}"></div><i id="horn${date}" class="fas fa-bullhorn"></i>`);                
+                date++;
+            }
+        }
+    }
+    for (let i = 0; i < divs.length; i++){
+        let id = divs[i].innerText;
+        $(divs[i]).attr('id', id);
+    }
+}
 
 $('.decrement-month').click(() => {
     currentMonth--;
@@ -79,21 +115,14 @@ const getMonth = month => {
 }
 
 $('.calender').on('click', 'div', e => {
-    let year = $('.cal-year').text();
-    let month = $('.cal-month').text();
-    let day = e.target.getAttribute('id'); 
-    let date = year + month + day;
-    let getWeekday = new Date(year, getMonth(month), day);
-    let weekdayNumber = getWeekday.getDay()
-
-    $('.date .day-number').text(day);
-    $('.date .month').text(month);   
-    $('.date .year').text(year);
-    $('.date .day').text(nameOfDay(weekdayNumber));    
+    
+    selectedYear = $('.cal-year').text();
+    selectedMonth = $('.cal-month').text();
+    selectedDay = e.target.getAttribute('id');
     
     $('.calender > div').css('background-color', 'rgb(228, 228, 228)');
     $(e.target).css('background-color', 'rgba(0, 105, 100, 0.1)');
 
     $('.todos').html('');
-    showTodos();
+    showTodos();      
 });

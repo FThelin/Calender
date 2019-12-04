@@ -8,6 +8,7 @@ $(document).ready(() => {
     }
 
     today();
+    clock();
     generateDays(today().month);
     addEventListeners();
     showAmountOfTodos();
