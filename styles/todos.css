@@ -122,8 +122,13 @@ aside {
     color: rgb(199, 60, 71);
     font-size: 1.1rem;
 }
-
 .todos #icons i:nth-child(2){
+    color: rgb(219, 216, 4);
+    font-size: 0.9rem;
+    padding-top: 0.1rem; 
+}
+
+.todos #icons i:nth-child(3){
     color: rgb(37, 202, 139);
 }
 
