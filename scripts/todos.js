@@ -37,7 +37,7 @@ const showTodos = () => {
                 todoContent.innerHTML = `<p>${getTodos[j].text}</p><p>Tid: ${getTodos[j].timeFrom} - ${getTodos[j].timeTo}</p><div id="icons"><i class="fas fa-times"></i><i class="fas fa-check"></i></div>`;
                 $('.todos').append(todoContent);
                 addMarkDoneEventListener();
-                removeTodoEventListener();
+                //removeTodoEventListener();
             } 
         }
     }

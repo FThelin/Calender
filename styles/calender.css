@@ -80,6 +80,7 @@ section {
     bottom: 0.3rem;
     font-size: 16px;
     color: rgb(50, 66, 82);
+    background: initial;
     font-weight: bold;
 }
 
