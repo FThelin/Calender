@@ -29,15 +29,11 @@
     width: auto;
     height: auto;
     grid-template-columns: auto;
-    grid-template-rows: 10% 80% 10% ;
+    grid-template-rows: 4rem 40rem 10%;
     grid-template-areas: 
     "head"
     "side"
     "cal";    
-    }
-
-    .todos > div {
-        
     }
     
     .select-month .newTodoButton {
@@ -61,6 +57,18 @@
         justify-content: center;
         padding-right: 0rem;
     }
+
+    .date p {
+        font-size: 1.2rem;
+    }
+
+    .new-todo {
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    aside {
+        grid-template-rows: 8rem auto;
+    }
 }
 
 @media screen and (max-width: 37.5rem) {
@@ -68,19 +76,32 @@
     body {
         background-color: rgb(97, 113, 128);
         width: auto;
-        height: 40rem;
+        height: 100vh;
         grid-template-columns: auto;
         grid-template-rows: 10% 90%;
         grid-template-areas: 
         "head"
         "side";
     }
+
     section {
         display: none;
     }
 
     html {
-        color: rgb(97, 113, 128);
+       color: rgb(97, 113, 128);
+    }
+
+    .date p {
+        font-size: 1.2rem;
+    }
+
+    header .newTodoButtonResponsive {    
+        display: flex;     
+    }
+
+    header .newTodoButtonResponsive:hover {
+        display: flex;
     }
 
 }

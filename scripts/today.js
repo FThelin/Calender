@@ -6,12 +6,38 @@ const getToday = () => {
     return date;     
 }
 
-const clock = () => {
-    const hours = getToday().getHours();
-    const minutes = getToday().getMinutes(); 
-    $('.date .time').text(`${hours}:${minutes}`);
-    let t = setTimeout(clock, 1000); 
+/**
+ * This function adda a zero if the number is under 10 before the number is showed.
+ * @param {number} i number from updateTime
+ * @returns {number} number with added zero
+ */
+function addZero(i) {
+    if (i < 10) {
+        i = "0" + i
+    }
+    return i;
 }
+
+/**
+ * Function that updates ever half second then updates the time is the time has changed.
+ * Then the function refers to itself to update again. 
+ */
+function updateTime() {
+    let date = getToday();
+    let hours = date.getHours();
+    let minutes = date.getMinutes();
+    let seconds = date.getSeconds();
+
+    hours = addZero(hours);
+    minutes = addZero(minutes);
+    seconds = addZero(seconds);
+
+    document.querySelector(".date .time").innerText = hours + ":" + minutes + ":" + seconds;
+    // $('.date .time').text(`${hours}:${minutes}:${seconds}`);
+    update = setTimeout(function () { updateTime() }, 500)
+}
+
+
 
 const today = () => { 
 

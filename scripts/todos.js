@@ -160,39 +160,45 @@ const showAmountOfTodos = () => {
 }
 
 const newTodo = () => { 
-    $('.new-todo').css('display', 'flex');   
+    $('.new-todo').css('display', 'flex');
 }
 
 const saveTodos = e => {    
     e.preventDefault();
     let text = $('#text').val();
-    let day = $('#day').val();
-    let id = $('#day').val();
-    let month = $('#month').val();
-    let year = $('#year').val();
-    let date = day + month + year; 
-    let todoList = [];
-    let todoInStorage; 
-    let todo = new Todos(id, year, month, day, text);
-
-    if(localStorage.getItem(date)){
-        let storage = JSON.parse(localStorage.getItem(date));
-        for (let i = 0; i < storage.length; i++){
-            todoInStorage = storage[i];
-            todoList.push(todoInStorage);            
-        }
-        todoList.push(todo);
-        localStorage.setItem(date, JSON.stringify(todoList)); 
-    } else {
-        localStorage.setItem(date, JSON.stringify(Todos.todoList(todo)));
-    }
+    if (text !== "") {
+        let text = $('#text').val();
+        let day = $('#day').val();
+        let id = $('#day').val();
+        let month = $('#month').val();
+        let year = $('#year').val();
+        let date = day + month + year; 
+        let todoList = [];
+        let todoInStorage; 
+        let todo = new Todos(id, year, month, day, text);
     
-    $('.todos').html(''); 
-    showAllTodos();
-    clearForm();
-    $('.new-todo').css('display', 'none');
-    showAmountOfTodos();       
-    showTodos(); 
+        if(localStorage.getItem(date)){
+            let storage = JSON.parse(localStorage.getItem(date));
+            for (let i = 0; i < storage.length; i++){
+                todoInStorage = storage[i];
+                todoList.push(todoInStorage);            
+            }
+            todoList.push(todo);
+            localStorage.setItem(date, JSON.stringify(todoList)); 
+        } else {
+            localStorage.setItem(date, JSON.stringify(Todos.todoList(todo)));
+        }
+        
+        $('.todos').html(''); 
+        showAllTodos();
+        clearForm();
+        $('.new-todo').css('display', 'none');
+        showAmountOfTodos();       
+        showTodos(); 
+    } else {
+        $('.new-todo').css('display', 'none');
+    }
+
 }
 
 const closeForm = (e) => {

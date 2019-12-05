@@ -9,7 +9,8 @@ $(document).ready(() => {
 
     holidayAsyncAwait(today().year);
     today();
-    clock();
+    // clock();
+    updateTime();
     generateDays(today().month);
     addEventListeners();
     showAmountOfTodos();    

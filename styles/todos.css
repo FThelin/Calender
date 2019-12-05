@@ -3,7 +3,7 @@ aside {
     grid-area: side;
     background-color: rgb(97, 113, 128);
     display: grid;
-    grid-template-rows: 8rem auto;
+    grid-template-rows: 8rem 45rem;
     grid-template-areas: 
     "date"
     "todos";
@@ -98,6 +98,7 @@ aside {
 .date .year {
     font-size: 1.5rem;
 }
+
 
 .todos {
     grid-area: todos;

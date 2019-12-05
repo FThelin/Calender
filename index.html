@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,15 +8,19 @@
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/todos.css">
     <link rel="stylesheet" href="styles/calender.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles/mediaqueries.css">
-    <script src="https://kit.fontawesome.com/8bcd668c2a.js" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="scripts/script.js"></script>
-    <script src="scripts/today.js"></script>    
+    <script src="scripts/today.js"></script>
     <script src="scripts/calender.js" defer></script>
     <script src="scripts/todos.js"></script>
     <title>Todo Kalender</title>
 </head>
+
 <body>
 
     <!-- Ny todo -->
@@ -24,7 +29,7 @@
             <h3>Ny todo</h3>
             <form class="column">
                 <label for="text">Todo:</label>
-                <input type="text" id="text" placeholder="Todo....">
+                <input type="text" id="text" placeholder="Todo...." minlength="2" maxlength="28" size="10" required="required" />
 
                 <div>
                     <label for="day">Dag</label>
@@ -103,24 +108,26 @@
                         <option value="2012">2012</option>
                     </select>
                 </div>
-                              
+
 
                 <div class="center">
                     <button>Spara</button>
                     <button>Stäng</button>
                 </div>
-                
             </form>
         </div>
     </div>
 
     <!-- Header -->
     <header>
+        <div class="newTodoButtonResponsive">
+            <i class="fas fa-plus add"></i>
+        </div>
         <h1>Todo Kalender</h1>
     </header>
 
     <!-- Sidebar -->
-    <aside>      
+    <aside>
 
         <div class="date column">
             <p class="day"></p>
@@ -129,7 +136,7 @@
         </div>
 
         <div class="todos"></div>
-        
+
     </aside>
 
     <!-- Calender -->
@@ -147,16 +154,17 @@
                 <i class="fas fa-angle-right increment-month"></i>
             </div>
         </div>
-        <div class="days">            
+        <div class="days">
             <div>Måndag</div>
             <div>Tisdag</div>
             <div>Onsdag</div>
             <div>Torsdag</div>
             <div>Fredag</div>
-            <div>Lördag</div> 
-            <div>Söndag</div>           
+            <div>Lördag</div>
+            <div>Söndag</div>
         </div>
         <div class="calender"></div>
-    </section>    
+    </section>
 </body>
+
 </html>

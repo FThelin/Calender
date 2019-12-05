@@ -50,6 +50,25 @@ header h1 {
     font-family: 'Caveat', cursive;
 }
 
+header .newTodoButtonResponsive {    
+    display: none;
+    color: rgb(0, 131, 33);
+    background-color: rgb(255, 255, 255);
+    padding: 0.4rem;
+    border-radius: 50%;
+    box-shadow: 0rem 0rem 0.2rem black;
+    font-size: 2rem;
+    position: relative;
+
+}
+
+header .newTodoButtonResponsive:hover {
+    display: none;
+    cursor: pointer;
+    background-color: white;
+    box-shadow: 0rem 0rem 0.2rem green;
+}
+
 ::-webkit-scrollbar {
     width: 10px;
 }
