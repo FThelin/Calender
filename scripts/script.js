@@ -7,13 +7,14 @@ $(document).ready(() => {
         $('.new-todo button:nth-child(2)').click(closeForm);
     }
 
+    holidayAsyncAwait(today().year);
     today();
     clock();
     generateDays(today().month);
     addEventListeners();
-    showAmountOfTodos();
-    showTodos();
-    holidayAsyncAwait(today().year);
+    showAmountOfTodos();    
+    showTodos();    
+    showAllTodos();    
 })
 
 

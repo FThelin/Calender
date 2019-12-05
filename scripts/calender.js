@@ -1,6 +1,6 @@
-let selectedYear;
-let selectedMonth;
-let selectedDay;
+let selectedYear = 'Selected';
+let selectedMonth = 'Date';
+let selectedDay = 'No';
 let currentMonth = today().month;
 let currentYear = today().year;
 const months = ['Januari', 'Februari', 'Mars', 'April', 'Maj', 'Juni', 'Juli', 'Augusti', 'September', 'Oktober', 'November', 'December'];
@@ -116,13 +116,22 @@ const getMonth = month => {
 
 $('.calender').on('click', 'div', e => {
     
-    selectedYear = $('.cal-year').text();
-    selectedMonth = $('.cal-month').text();
-    selectedDay = e.target.getAttribute('id');
-    
-    $('.calender > div').css('background-color', 'rgb(228, 228, 228)');
-    $(e.target).css('background-color', 'rgba(0, 105, 100, 0.1)');
-
-    $('.todos').html('');
-    showTodos();      
+    if ($(e.target).hasClass('selected')){
+        $(e.target).removeClass('selected');
+        $(e.target).css('background-color', 'rgb(228, 228, 228)');
+        selectedDay = 'No';        
+        selectedMonth = 'Date';
+        selectedYear = 'Selected';
+        $('.todos').html('');
+        showAllTodos();        
+    } else {
+        $('.calender > div').css('background-color', 'rgb(228, 228, 228)');
+        $(e.target).css('background-color', 'rgba(0, 105, 100, 0.1)');
+        $(e.target).addClass('selected');
+        selectedYear = $('.cal-year').text();
+        selectedMonth = $('.cal-month').text();
+        selectedDay = e.target.getAttribute('id');
+        $('.todos').html('');
+        showTodos(); 
+    }  
 });
