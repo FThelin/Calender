@@ -50,7 +50,7 @@ const generateDays = currentMonth => {
     for (let i = 0; i < divs.length; i++){
         if (day == divs[i].getAttribute('id')){
             for(let j = day; j < lastDay.getDate() + day; j++){    
-                $(`#${j}`).html(`${date}<div  id="holiday${date}"></div><div id="todo${date}"></div><i id="horn${date}" class="fas fa-bullhorn"></i>`);                
+                $(`#${j}`).html(`${date}<div class="holiday" id="holiday${date}"></div><div id="todo${date}"></div><i id="horn${date}" class="fas fa-bullhorn"></i>`);                
                 date++;
             }
         }

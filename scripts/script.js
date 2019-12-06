@@ -6,8 +6,8 @@ $(document).ready(() => {
     const addEventListeners = () => {
         $('.add').click(newTodo);
         $('.new-todo button:nth-child(1)').click(saveTodos);
-        $('.new-todo button:nth-child(2)').click(closeForm);
-        $('.new-todo button:nth-child(3)').click(editTodo);
+        $('.new-todo button:nth-child(3)').click(closeForm);
+        $('.new-todo button:nth-child(2)').click(editTodo);
     }
          
     today();
@@ -17,7 +17,7 @@ $(document).ready(() => {
     showTodos();    
     showAllTodos(); 
     addEventListeners();
-    holidayAsyncAwait(today().year);      
+    holidayAsyncAwait(today().year);    
 })
 
 /**

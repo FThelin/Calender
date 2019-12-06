@@ -60,12 +60,12 @@ aside {
     display: none;
 }
 
-.new-todo form button:nth-child(2){
+.new-todo form button:nth-child(3){
     background-color: rgb(199, 60, 71);
     border: 1px solid rgb(199, 60, 71);
 }
 
-.new-todo form button:nth-child(3){
+.new-todo form button:nth-child(2){
     background-color: rgb(219, 216, 4);
     border: 1px solid rgb(219, 216, 4);
     display: none;

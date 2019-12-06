@@ -25,8 +25,8 @@ const showAmountOfTodos = () => {
             $(`#horn${selectedDay}`).removeClass('show-horn');
             $(`#todo${selectedDay}`).text('');
             $(`#todo${selectedDay}`).removeClass('show-todo');
-        }           
-    }  
+        }                    
+    }          
 }
 
 /**
@@ -47,7 +47,7 @@ const showAllTodos = () => {
         }
     }
     removeTodoEventListener();
-    editTodoEventListener(); 
+    editTodoEventListener();         
 }
 
 class Todos {
@@ -89,10 +89,10 @@ const showTodos = () => {
             if (getTodos[j].day == selectedDay && getTodos[j].month == selectedMonth && getTodos[j].year == selectedYear) {
                 const todoContent = document.createElement('div');
                 todoContent.innerHTML = `<p>${getTodos[j].text}</p><p class="todoDate">${getTodos[j].day}${getTodos[j].month}${getTodos[j].year}</p><div id="icons"><i class="fas fa-times"></i><i class="fas fa-pen"></i></div>`;
-                $('.todos').append(todoContent);                                
+                $('.todos').append(todoContent);                                               
             } 
         }
-    }
+    }    
     removeTodoEventListener();
     editTodoEventListener();
 }
@@ -114,7 +114,7 @@ const editTodoEventListener = () => {
         $('.new-todo').css('display', 'flex');      
         $('.new-todo #text').val(text);
         $('.new-todo button:nth-child(1)').hide();
-        $('.new-todo button:nth-child(3)').show();
+        $('.new-todo button:nth-child(2)').show();
         
         let getTodos = JSON.parse(localStorage.getItem(keyText));
         for (let i = 0; i < getTodos.length; i++){
@@ -172,7 +172,7 @@ const removeTodo = e => {
 const newTodo = () => { 
     $('.new-todo').css('display', 'flex');
     $('.new-todo button:nth-child(1)').show();
-    $('.new-todo button:nth-child(3)').hide();
+    $('.new-todo button:nth-child(2)').hide();
 }
 
 /**

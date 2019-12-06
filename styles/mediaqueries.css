@@ -26,14 +26,17 @@
 @media screen and (max-width: 52.5rem) {
     
     body {
-    width: auto;
-    height: auto;
+    height: 100vh;
     grid-template-columns: auto;
-    grid-template-rows: 4rem 40rem 10%;
+    grid-template-rows: 4rem auto 21rem;
     grid-template-areas: 
     "head"
     "side"
     "cal";    
+    }
+
+    .holiday {
+        display: none;
     }
     
     .select-month .newTodoButton {
@@ -102,6 +105,14 @@
 
     header .newTodoButtonResponsive:hover {
         display: flex;
+    }
+
+    .new-todo .set-todo {
+        width: 15rem;
+    }
+
+    .new-todo form select{
+        display: block;
     }
 
 }
