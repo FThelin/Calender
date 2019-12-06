@@ -5,6 +5,10 @@ let currentMonth = today().month;
 let currentYear = today().year;
 const months = ['Januari', 'Februari', 'Mars', 'April', 'Maj', 'Juni', 'Juli', 'Augusti', 'September', 'Oktober', 'November', 'December'];
 
+/**
+ * Fill the calender with days and start on correct weekday.
+ * @param {Number} currentMonth 
+ */
 const generateDays = currentMonth => {
     let html = "";
     let date = 1;
@@ -57,6 +61,9 @@ const generateDays = currentMonth => {
     }
 }
 
+/**
+ * Change calender when changing month
+ */
 $('.decrement-month').click(() => {
     currentMonth--;
     if (currentMonth == -1) {
@@ -83,6 +90,10 @@ $('.increment-month').click(() => {
     holidayAsyncAwait(currentYear);
 })
 
+/**
+ * Convert month name to numbers
+ * @param {String} month 
+ */
 const getMonth = month => {
     switch (month) {
         case 'Januari':
@@ -114,6 +125,9 @@ const getMonth = month => {
     }
 }
 
+/**
+ * Select and de-select days in the calender
+ */
 $('.calender').on('click', 'div', e => {
     
     if ($(e.target).hasClass('selected')){

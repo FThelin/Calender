@@ -3,7 +3,7 @@ aside {
     grid-area: side;
     background-color: rgb(97, 113, 128);
     display: grid;
-    grid-template-rows: 8rem 45rem;
+    grid-template-rows: 8rem auto;
     grid-template-areas: 
     "date"
     "todos";
@@ -48,17 +48,27 @@ aside {
     margin-top: 1rem;
     width: 4rem;
     height: 2.5rem;
-    background-color: rgb(63, 194, 139);
-    border: 1px solid rgb(63, 194, 139);
     font-family: 'Quicksand', sans-serif;
     font-size: 1.2rem;
     font-weight: bold;
     margin-right: 1rem;
 }
 
+.new-todo form button:nth-child(1){
+    background-color: rgb(63, 194, 139);
+    border: 1px solid rgb(63, 194, 139);
+    display: none;
+}
+
 .new-todo form button:nth-child(2){
     background-color: rgb(199, 60, 71);
     border: 1px solid rgb(199, 60, 71);
+}
+
+.new-todo form button:nth-child(3){
+    background-color: rgb(219, 216, 4);
+    border: 1px solid rgb(219, 216, 4);
+    display: none;
 }
 
 .new-todo label {
@@ -98,7 +108,6 @@ aside {
 .date .year {
     font-size: 1.5rem;
 }
-
 
 .todos {
     grid-area: todos;

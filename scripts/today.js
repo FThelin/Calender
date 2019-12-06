@@ -1,13 +1,13 @@
-const getToday = () => {
-    /**
-     * Get todays date
-     */
+/**
+ * Get todays date
+ */
+const getToday = () => {    
     const date = new Date();
     return date;     
 }
 
 /**
- * This function adda a zero if the number is under 10 before the number is showed.
+ * This function adds a zero if the number is under 10 before the number is showed.
  * @param {number} i number from updateTime
  * @returns {number} number with added zero
  */
@@ -38,7 +38,9 @@ function updateTime() {
 }
 
 
-
+/**
+ * Display todays date in post-it and above calender
+ */
 const today = () => { 
 
     const month = getToday().getMonth();
@@ -46,9 +48,7 @@ const today = () => {
     const weekday = getToday().getDay();
     const day = getToday().getDate();        
 
-    /**
-     * Display todays date in post-it and above calender
-     */
+    
     switch (month) {
         case 0:
             $('section .cal-month').text('Januari');

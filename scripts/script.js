@@ -1,36 +1,45 @@
 $(document).ready(() => {
 
-
+    /**
+     * Add event listeners to the new todo and edit todo forms.
+     */
     const addEventListeners = () => {
         $('.add').click(newTodo);
         $('.new-todo button:nth-child(1)').click(saveTodos);
         $('.new-todo button:nth-child(2)').click(closeForm);
+        $('.new-todo button:nth-child(3)').click(editTodo);
     }
-
-    holidayAsyncAwait(today().year);
+         
     today();
-    // clock();
     updateTime();
-    generateDays(today().month);
-    addEventListeners();
+    generateDays(today().month);    
     showAmountOfTodos();    
     showTodos();    
-    showAllTodos();    
+    showAllTodos(); 
+    addEventListeners();
+    holidayAsyncAwait(today().year);      
 })
 
-
+/**
+ * Fetch the swedish holidays API response
+ * @param {Number} year 
+ */
 async function holidayAsyncAwait(year) { 
 
     try {
         const response = await fetch('https://api.dryg.net/dagar/v2.1/' + year + '');
         const data = await response.json();
         holidayYear(data.dagar);
-        
-    } catch (error) {
+    } 
+    catch (error) {
         console.error(error);
     }
 }
 
+/**
+ * Find the holidays of the year
+ * @param {String} days Array of objects woth all days
+ */
 function holidayYear(days) {
     
     let holiday;
@@ -44,6 +53,10 @@ function holidayYear(days) {
     loopYear(listOfHolidays);
 }
 
+/**
+ * Convert month names to numbers and show in calender
+ * @param {String} listOfHolidays 
+ */
 function loopYear(listOfHolidays) {
     let month;
     switch ($('.cal-month').text()){
